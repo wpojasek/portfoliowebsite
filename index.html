@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pojasekwojciech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Górny pasek -->
+    <header class="top-bar">
+        <div class="header-container">
+            <h1>Pojasek Wojciech</h1>
+            <a href="about.html" class="about">About me</a>
+        </div>
+        <a href="https://www.instagram.com/_pojasek_/" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram" class="instagram-icon">
+        </a>
+    </header>
+
+    <!-- Galeria zdjęć -->
+    <div class="gallery"></div>
+
+    <!-- Powiększone zdjęcie -->
+    <div class="lightbox">
+        <img id="lightbox-img" src="" alt="Powiększone zdjęcie">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <span class="hashtag">#itallstartswithanidea</span>
+    </footer>
+
+    <!-- Skrypt do dodawania zdjęć dynamicznie -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let gallery = document.querySelector(".gallery");
+            let lightbox = document.querySelector(".lightbox");
+            let lightboxImg = document.querySelector("#lightbox-img");
+
+            for (let i = 2; i <= 75; i++) {
+                let img = document.createElement("img");
+                img.src = "images/" + i + ".jpg"; 
+                img.alt = "Photo " + i;
+                img.classList.add("gallery-item");
+                img.addEventListener("click", function() {
+                    lightboxImg.src = img.src;
+                    lightbox.classList.add("active");
+                });
+                gallery.appendChild(img);
+            }
+
+            // Zamknięcie powiększonego obrazu po kliknięciu
+            lightbox.addEventListener("click", function() {
+                lightbox.classList.remove("active");
+            });
+        });
+    </script>
+
+</body>
+</html>

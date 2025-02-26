@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+/* Górny pasek */
+.top-bar {
+    width: 100%;
+    height: 10%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 2% 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Grupowanie nazwy i About bliżej siebie */
+.top-left {
+    display: flex;
+    align-items: center;
+    gap: 1vw; /* Zmniejszenie odstępu */
+}
+
+.name {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.about {
+    font-size: 150%;
+    color: gray;
+    text-decoration: none;
+}
+
+/* Galeria zdjęć */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2%;
+}
+
+.gallery-item {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Powiększanie zdjęcia */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 60%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+.hashtag {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Odstęp między About a ikoną */
+}
+
+.instagram-icon {
+    width: 60px; /* Dopasuj rozmiar ikony */
+    height: 60px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.2); /* Efekt powiększenia po najechaniu */
+}
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Odstęp między nazwą a "About" */
+}

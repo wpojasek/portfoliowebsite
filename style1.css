@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: 'Museo', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Tło dla about.html */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('photo.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Górny pasek */
+.top-bar {
+    width: 100%;
+    height: 60px; /* Stała wysokość */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Link do powrotu do Home */
+.home {
+    font-size: 20px; /* Stały rozmiar */
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+/* Prostokąt z opisem */
+.about-box {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 500px; /* Stała szerokość */
+    max-width: 90%; /* Na bardzo małych ekranach dostosowanie */
+    background-color: rgba(200, 200, 200, 0.8);
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-50%); /* Centrowanie w pionie */
+}
+
+/* Tytuł w prostokącie */
+.about-box h1 {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+}
+
+/* Tekst w prostokącie */
+.about-box p {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    height: 80px; /* Stała wysokość */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tekst w stopce */
+.hashtag {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Ikona Instagrama */
+.instagram-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.2);
+} 
+
+/* Responsywność dla mniejszych ekranów */
+@media (max-width: 768px) {
+    .about-box {
+        width: 90%;
+        left: 5%;
+    }
+
+    .home {
+        font-size: 18px;
+    }
+
+    .hashtag {
+        font-size: 16px;
+    }
+}
+
+
+*{
+    box-sizing: border-box;
+}
