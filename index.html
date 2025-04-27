@@ -49,8 +49,9 @@
 
             for (let i = 2; i <= 98; i++) {
                 let img = document.createElement("img");
-                img.src =   i + ".jpg"; 
+                img.src =   i + ".webp"; 
                 img.alt = "Photo " + i;
+                img.loading = "lazy";
                 img.classList.add("gallery-item");
                 img.addEventListener("click", function() {
                     lightboxImg.src = img.src;
